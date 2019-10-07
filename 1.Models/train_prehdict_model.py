@@ -71,9 +71,9 @@ def train(args, train_X, train_y, train_cov, test_X, test_y, test_cov, max_epoch
     train_X, train_y, train_cov = shuffle(train_X, train_y, train_cov, random_state=42)
 
     if args.view != "siamese":
-        net = SiamNet(num_inputs=1, output_dim=args.output_dim).to(device)
+        net = PrehdictNet(num_inputs=1, output_dim=args.output_dim).to(device)
     else:
-        net = SiamNet(output_dim=args.output_dim).to(device)
+        net = PrehdictNet(output_dim=args.output_dim).to(device)
     if args.adam:
         optimizer = torch.optim.Adam(net.parameters(), lr=hyperparams['lr'],
                                      weight_decay=hyperparams['weight_decay'])

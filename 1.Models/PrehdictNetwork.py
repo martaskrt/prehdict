@@ -5,7 +5,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 class PrehdictNet(nn.Module):
     def __init__(self, num_inputs=2, classes=2, dropout_rate=0.5,output_dim=256):
-        super(SiamNet, self).__init__()
+        super(PrehdictNet, self).__init__()
         self.num_inputs = num_inputs
         self.output_dim=output_dim
         
